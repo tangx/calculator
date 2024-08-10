@@ -45,8 +45,8 @@ export default App
 function getNumbers() {
 
   for (; ;) {
-    const a = getRandInt(10)
-    const b = getRandInt(10)
+    const a = getRandInt(9) + 1
+    const b = getRandInt(9) + 1
     const c = a + b
     if (c <= 10) {
       return { a, b, c }
