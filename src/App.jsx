@@ -43,7 +43,6 @@ export default App
 
 function getNumbers() {
 
-
   for (; ;) {
     const a = getRandInt(9) + 1
     const b = getRandInt(9) + 1
