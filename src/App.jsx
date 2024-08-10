@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import classNames from 'classnames'
 
 function App() {
 
@@ -23,7 +22,7 @@ function App() {
   return (
     <>
       <div className="header">
-        <button onClick={isShowResult}>ShowReult</button >
+        <button onClick={isShowResult}>结果</button >
       </div>
       <div className="body">
         <h1>{n.a}+{n.b}=
@@ -31,7 +30,7 @@ function App() {
             showResult ? n.c : '?'
           }
         </h1 >
-        <button onClick={refreshNumbers}>Refresh</button>
+        <button onClick={refreshNumbers}>下一题</button>
       </div>
       <div className="footer"></div>
 
