@@ -13,7 +13,12 @@ function App() {
 
 
   const refreshNumbers = () => {
-    setNumbers(getNumbers())
+    setShowResult(false)
+
+    const n = getNumbers()
+    console.log(n);
+
+    setNumbers(n)
   }
 
   const isShowResult = () => {
@@ -43,12 +48,20 @@ export default App
 
 function getNumbers() {
 
+  // const a = getRandInt(9) + 1
+  const a = 1
+
   for (; ;) {
-    const a = getRandInt(9) + 1
     const b = getRandInt(9) + 1
     const c = a + b
 
     if (c <= 10) {
+
+      const z = getRandInt(2) % 2
+      if (z === 1) {
+        return { a: b, b: a, c }
+      }
+
       return { a, b, c }
     }
   }
