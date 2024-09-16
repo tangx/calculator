@@ -14,15 +14,7 @@ function App() {
 
   const refreshNumbers = () => {
     setShowResult(false)
-<<<<<<< HEAD
     setNumbers(getNumbers())
-=======
-
-    const n = getNumbers()
-    console.log(n);
-
-    setNumbers(n)
->>>>>>> 21b78456f31ebaf32bd91cd80ff8ef2080f67c47
   }
 
   const isShowResult = () => {
@@ -56,24 +48,11 @@ function getNumbers() {
   const a = 1
 
   for (; ;) {
-<<<<<<< HEAD
     const a = getRandInt(100) + 1
     const b = getRandInt(100) + 1
     const c = a + b
 
     if (c <= 200) {
-=======
-    const b = getRandInt(9) + 1
-    const c = a + b
-
-    if (c <= 10) {
-
-      const z = getRandInt(2) % 2
-      if (z === 1) {
-        return { a: b, b: a, c }
-      }
-
->>>>>>> 21b78456f31ebaf32bd91cd80ff8ef2080f67c47
       return { a, b, c }
     }
   }
