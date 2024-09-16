@@ -13,6 +13,7 @@ function App() {
 
 
   const refreshNumbers = () => {
+    setShowResult(false)
     setNumbers(getNumbers())
   }
 
@@ -44,11 +45,11 @@ export default App
 function getNumbers() {
 
   for (; ;) {
-    const a = getRandInt(9) + 1
-    const b = getRandInt(9) + 1
+    const a = getRandInt(100) + 1
+    const b = getRandInt(100) + 1
     const c = a + b
 
-    if (c <= 10) {
+    if (c <= 200) {
       return { a, b, c }
     }
   }
