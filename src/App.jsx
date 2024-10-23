@@ -5,7 +5,8 @@ function App() {
 
 
 
-  const [max, setMax] = useState(10)
+  const [max, setMax] = useState(9)
+  // const max = 10
 
   const [n, setNumbers] = useState(getNumbers(max))
   const [showResult, setShowResult] = useState(false)
@@ -22,8 +23,9 @@ function App() {
   return (
     <>
       <div className="header">
-        <span>最大数</span><input type="number" value={max}
-          onChange={(e) => setMax(e.target.value)} />
+        <span>最大数</span><input type="number" placeholder={max}
+          onBlur={(e) => setMax(e.target.value)}
+        />
         <br />
 
       </div>
