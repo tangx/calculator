@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
+import { Button, InputNumber } from 'antd'
 
 function App() {
 
@@ -22,35 +23,35 @@ function App() {
     setShowResult(!showResult)
   }
 
-
-  function showMinusOrAdd(n) {
-    return isMinus
-      ? <h1> {n.a}+{n.b}= {showResult && n.c || '?'}</h1>
-      : <h1> {n.c}-{n.b}={showResult && n.a || '?'}</h1>
-  }
-
   return (
     <>
       <div className="header">
-        <span>最大数</span><input type="number" placeholder={max}
+        <span>最大数</span>
+        <InputNumber placeholder={max} defaultChecked={max} min={1} max={10}
           onBlur={(e) => setMax(e.target.value)}
         />
 
-        <button onClick={() => setIsMinus(!isMinus)}>换{isMinus ? "减" : "加"}法</button>
+        <Button
+          // variant='outlined'
+          color={isMinus ? 'primary' : 'danger'}
+          variant='outlined'
+          // type='default'
+
+          onClick={() => setIsMinus(!isMinus)}
+        >换{isMinus ? "减" : "加"}法</Button>
         <br />
 
       </div>
       <div className="body">
 
+        {
+          isMinus
+            ? <h1> {n.a}+{n.b}= {showResult && n.c || '?'}</h1>
+            : <h1> {n.c}-{n.b}={showResult && n.a || '?'}</h1>
+        }
 
-        {showMinusOrAdd(n)}
-
-
-        {/* <h1>{n.a}+{n.b}={n.c}</h1 > */}
-        {/* <h1>{n.c}-{n.b}={n.a}</h1 > */}
-
-        <button onClick={refreshNumbers}>下一题</button>
-        <button onClick={isShowResult}>显示结果</button >
+        <Button onClick={refreshNumbers}>下一题</Button>
+        <Button onClick={isShowResult}>显示结果</Button >
         {/* <button onClick={setIsMinus(!isMinus)}>+</button> */}
       </div>
       <div className="footer"></div>
