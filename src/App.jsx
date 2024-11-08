@@ -10,14 +10,23 @@ function App() {
 
   const [n, setNumbers] = useState(getNumbers(max))
   const [showResult, setShowResult] = useState(false)
+  const [isMinus, setIsMinus] = useState(false)
 
   const refreshNumbers = () => {
     // setShowResult(false)
     setNumbers(getNumbers(max))
+    setIsMinus(getRandInt(2) === 1)
   }
 
   const isShowResult = () => {
     setShowResult(!showResult)
+  }
+
+
+  function showMinusOrAdd(n) {
+    return isMinus
+      ? <h1> {n.a}+{n.b}= {showResult && n.c || '?'}</h1>
+      : <h1> {n.c}-{n.b}={showResult && n.a || '?'}</h1>
   }
 
   return (
@@ -32,7 +41,7 @@ function App() {
       <div className="body">
 
 
-        {showMinusOrAdd(n, showResult)}
+        {showMinusOrAdd(n)}
 
 
         {/* <h1>{n.a}+{n.b}={n.c}</h1 > */}
@@ -40,6 +49,8 @@ function App() {
 
         <button onClick={refreshNumbers}>下一题</button>
         <button onClick={isShowResult}>显示结果</button >
+        <button onClick={() => setIsMinus(!isMinus)}>换{isMinus ? "减" : "加"}法</button>
+        {/* <button onClick={setIsMinus(!isMinus)}>+</button> */}
       </div>
       <div className="footer"></div>
 
@@ -65,10 +76,4 @@ function getNumbers(max) {
 
 function getRandInt(max) {
   return Math.floor(Math.random() * max)
-}
-
-function showMinusOrAdd(n, show) {
-  return getRandInt(2) === 1
-    ? <h1> {n.a}+{n.b}= {show && n.c || '?'}</h1>
-    : <h1> {n.c}-{n.b}={show && n.a || '?'}</h1>
 }
