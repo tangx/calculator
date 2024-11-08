@@ -35,6 +35,8 @@ function App() {
         <span>最大数</span><input type="number" placeholder={max}
           onBlur={(e) => setMax(e.target.value)}
         />
+
+        <button onClick={() => setIsMinus(!isMinus)}>换{isMinus ? "减" : "加"}法</button>
         <br />
 
       </div>
@@ -49,7 +51,6 @@ function App() {
 
         <button onClick={refreshNumbers}>下一题</button>
         <button onClick={isShowResult}>显示结果</button >
-        <button onClick={() => setIsMinus(!isMinus)}>换{isMinus ? "减" : "加"}法</button>
         {/* <button onClick={setIsMinus(!isMinus)}>+</button> */}
       </div>
       <div className="footer"></div>
