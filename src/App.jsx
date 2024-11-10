@@ -16,7 +16,7 @@ function App() {
   const refreshNumbers = () => {
     // setShowResult(false)
     setNumbers(getNumbers(max))
-    setIsMinus(getRandInt(2) === 1)
+    // setIsMinus(getRandInt(2) === 1)
   }
 
   const isShowResult = () => {
@@ -47,13 +47,13 @@ function App() {
         {
           isMinus
             ? <h1> {n.a}+{n.b}= {showResult && n.c || '?'}</h1>
-            : <h1> {n.c}-{n.b}={showResult && n.a || '?'}</h1>
+            : <h1> {n.c}<span style={{ color: 'red' }}>-</span>{n.b}={showResult && n.a || '?'}</h1>
         }
 
         <Button onClick={refreshNumbers}>下一题</Button>
         <Button onClick={isShowResult}>显示结果</Button >
         {/* <button onClick={setIsMinus(!isMinus)}>+</button> */}
-      </div>
+      </div >
       <div className="footer"></div>
 
     </>
